@@ -103,7 +103,25 @@ function buildCharts(sample_id) {
       ];
       // 9. Create the layout for the bar chart. 
       var barLayout = {
-	  title: "Top 10 Bacteria Cultures Found"
+	  title: {
+	      text: "Top 10 Bacteria Cultures Found",
+	      font: {
+		  color: "#f7f7f7"
+	      }
+	  },
+	  xaxis: {
+	      tickcolor: "#f7f7f7",
+	      tickfont: {
+		  color: "#f7f7f7"
+	      }
+	  },
+	  yaxis: {
+	      tickcolor: "#f7f7f7",
+	      tickfont: {
+		  color: "#f7f7f7"
+	      }
+	  },
+	  paper_bgcolor: "rgba(0,0,0,0)"
       };
       // 10. Use Plotly to plot the data with the layout.
       Plotly.newPlot("bar", barData, barLayout);
@@ -125,10 +143,31 @@ function buildCharts(sample_id) {
 
       // 2. Create the layout for the bubble chart.
       var bubbleLayout = {
-	  title: "Bacteria Cultures Per Sample",
+	  title: {
+	      text: "Bacteria Cultures Per Sample",
+	      font: {
+		  color: "#f7f7f7"
+	      }
+	  },
 	  xaxis: {
-	      title: 'OTU ID',
-	  }
+	      title: {
+		  text: 'OTU ID',
+		  font: {
+		      color: "#f7f7f7"
+		  }
+	      },
+	      tickcolor: "#f7f7f7",
+	      tickfont: {
+		  color: "#f7f7f7"
+	      }
+	  },
+	  yaxis: {
+	      tickcolor: "#f7f7f7",
+	      tickfont: {
+		  color: "#f7f7f7"
+	      }
+	  },
+	  paper_bgcolor: "rgba(0,0,0,0)"
       };
 
       // 3. Use Plotly to plot the data with the layout.
@@ -147,9 +186,11 @@ function buildCharts(sample_id) {
 	  type: "indicator",
 	  mode: "gauge+number",
 	  
-	  title: { text: "Belly Button Washing Frequency<br><span style='font-size:0.8em;color:gray'>Scrubs per Week</span>", tickwidth: 1, tickcolor: "black"  },
+	  title: { text: "Belly Button Washing Frequency<br><span style='font-size:0.8em;color:#f7f7f7'>Scrubs per Week</span>", tickwidth: 1, tickcolor: "#f7f7f7", font: { color: "#f7f7f7"}  },
 	  gauge: {
-	      axis: { range: [0, 10], dtick: 2 },
+	      axis: { range: [0, 10], dtick: 2, tickcolor: "#f7f7f7", tickfont: {
+		  color: "#f7f7f7"
+	      }},
 	      bar: { color: "black" },
 	      steps: [
 		  { range: [0, 2], color: "red" },
@@ -163,8 +204,11 @@ function buildCharts(sample_id) {
       
       // 5. Create the layout for the gauge chart.
       var gaugeLayout = { 
-	  
-      };
+	  paper_bgcolor: "rgba(0,0,0,0)",
+	  font: {
+	      color: "#f7f7f7"
+	  }
+      }
 
       // 6. Use Plotly to plot the gauge data and layout.
       Plotly.newPlot('gauge', gaugeData, gaugeLayout);
